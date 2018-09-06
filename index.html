@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="css/main.css">
+
+</head>
+<body>
+
+	<div id="app">
+
+		<div class="header">
+			<h1>A Vue.js-based battle game</h1>
+		</div>
+
+		<div>
+
+			<!-- health bar for both the player and monster -->
+			<div class="health-bar">
+				<h2>Player Health</h2>
+				<!-- pull vue data for the playerHealth -->
+				<div class="health-bar-inner" v-bind:style="{ width: playerHealth + '%' }">
+					<!-- the value of the health inside the bar -->
+					<h4>{{ playerHealth }}</h4>
+				</div>
+			</div><!-- 
+		 --><div class="health-bar">
+		 		<h2>Monster Health</h2>
+				<div class="health-bar-inner" v-bind:style="{ width: monsterHealth + '%' }">
+					<h4>{{ monsterHealth }}</h4>
+				</div>
+			</div>
+		</div>
+
+		<section id="buttons">
+			<div v-if="!isRunning">
+				<button type="button" v-on:click="start">Start Game</button>
+			</div>
+			<div v-if="isRunning">
+				<button class="attack" type="button" v-on:click="attack(3,10)">Attack</button>
+				<button class="special" type="button" v-on:click="attack(5,13)" v-bind:disabled="!(counter <= 0)">Special Attack</button>
+				<button class="heal" type="button" v-on:click="heal(10,16)">Heal</button>
+				<button class="give-up" type="button" v-on:click="start">Give Up</button>
+			</div>
+		</section>
+
+
+	</div>
+
+
+
+
+
+
+
+<!-- Scripts -->
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<!-- popper -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+	<!-- Bootstrap -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+	<!-- Vue -->
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<!-- Custom script -->
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

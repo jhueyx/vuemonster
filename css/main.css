@@ -1,0 +1,44 @@
+.header {
+	text-align: center;
+	padding: 5vh 0;
+}
+.health-bar {
+	display: inline-block;
+	width: 50%;
+	height: 200px;
+	padding: 35px;
+	background-color: #bab9b9;
+}
+.health-bar .health-bar-inner {
+	background-color: green;
+	padding: 15px 0;
+	height: 60%;
+	text-align: center;
+	transition: 0.2s ease;
+	color: #FFF;
+}
+#buttons {
+	text-align: center;
+	padding: 50px;
+}
+#buttons div button {
+	margin: 0 2%;
+	width: 20%;
+	padding: 20px;
+	border: none;
+	color: #FFF;
+	background-color: tomato;
+}
+#buttons div button[disabled] {
+	background-color: red;
+	color: tomato;
+}
+#buttons div button.attack {
+	background-color: teal;
+}
+#buttons div button.heal {
+	background-color: #8bc34a;
+}
+#buttons div button.give-up {
+	background-color: #555555;
+}
